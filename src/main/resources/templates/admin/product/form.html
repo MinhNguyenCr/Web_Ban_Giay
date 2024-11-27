@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input ng-model="form.name" id="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input ng-model="form.price" id="price" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select ng-model="form.category.id" id="category" class="form-control">
+            <option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="createDate">Create Date</label>
+        <input ng-model="form.createDate" type="date" id="createDate" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Available?</label>
+        <div class="form-control">
+            <div class="form-check form-check-inline">
+                <input ng-model="form.available" ng-value="true" name="available" type="radio"
+                       class="form-check-input" id="availableYes">
+                <label class="form-check-label" for="availableYes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input ng-model="form.available" ng-value="false" name="available" type="radio"
+                       class="form-check-input" id="availableNo">
+                <label class="form-check-label" for="availableNo">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input onchange="angular.element(this).scope().imageChanged(this.files)" type="file"
+               class="form-control" id="image">
+    </div>
+    <div class="form-group text-center">
+        <label for="image">
+            <img ng-src="{{form.imageUrl}}" style="max-width:100%;height:300px" class="image img-thumbnail">
+        </label>
+    </div>
+</div>
+<div class="text-center mt-3">
+    <button ng-click="create()" class="btn btn-primary">
+        <i class="glyphicon glyphicon-plus"></i> Create
+    </button>
+    <button ng-click="update()" class="btn btn-success">
+        <i class="glyphicon glyphicon-save"></i> Update
+    </button>
+    <button ng-click="delete(form)" class="btn btn-danger">
+        <i class="glyphicon glyphicon-trash"></i> Delete
+    </button>
+    <button ng-click="reset()" class="btn btn-info">
+        <i class="glyphicon glyphicon-refresh"></i> Reset
+    </button>
+</div>
