@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
 <main class="container mt-5">
     <div th:replace="~{/cart/view :: shopping_cart}"></div>
     <div class="card card-primary mt-3">
@@ -34,6 +34,7 @@
                 <label for="address" class="col-sm-3 col-form-label">Shipping Address:</label>
                 <div class="col-sm-9">
                     <textarea id="address" ng-model="order.address" class="form-control" rows="3"></textarea>
+
                 </div>
             </div>
         </div>

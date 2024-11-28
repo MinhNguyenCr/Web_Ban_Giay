@@ -4,6 +4,9 @@ app.controller("shopping-cart-ctrl", function($scope, $http) {
     $scope.cart = {
         items: [],
 
+
+
+
         // Thêm sản phẩm vào giỏ hàng
         add(id) {
             var item = this.items.find(item => item.id == id);
@@ -93,6 +96,17 @@ app.controller("shopping-cart-ctrl", function($scope, $http) {
                 alert("Đặt hàng lỗi!");
                 console.log(error);
             });
+        },
+
+        getAddress() {
+            return this.address; // Trả về giá trị của thuộc tính address
         }
     };
+    $scope.setAddressAndCheckout = function() {
+        // Lấy giá trị địa chỉ từ order.getAddress và gán vào order.address
+        $scope.order.address = $scope.order.getAddress(); // Sử dụng hàm getAddress để lấy giá trị địa chỉ
+        // Sau đó, chuyển hướng tới trang checkout
+        location.href = '/order/checkout'; // Hoặc bạn có thể sử dụng $window.location.href nếu cần
+    };
+
 });

@@ -29,10 +29,11 @@
                 <div class="card-body">
                     <ul class="list-unstyled">
                         <li><h5 th:text="${item.name}"></h5></li>
-                        <li><p class="card-text">$<span th:text="${item.price}"></span></p></li>
-                        <li><p class="card-text" th:text="${item.createDate}"></p></li>
+                        <li><p class="card-text fw-bolder">Price: $<span th:text="${item.price}"></span></p></li>
+                        <li><p class="card-text fw-bolder" th:text="'Date Uploaded: ' + ${item.createDate}"></p></li>
+
                         <li th:if="${item.category != null}">
-                            <p class="card-text" th:text="${item.category.name}"></p>
+                            <p class="card-text fw-bolder" th:text="'Category: ' + ${item.category.name}"></p>
                         </li>
 
 

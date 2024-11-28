@@ -15,6 +15,6 @@ app.config(function ($routeProvider) {
             controller: "authority-ctrl"
         })
         .otherwise({
-            template: "<h1 class='text-center'>FPT Administration</h1>"
+            template: "<h1 class='text-center'>Administration Interface</h1>"
         });
 });
